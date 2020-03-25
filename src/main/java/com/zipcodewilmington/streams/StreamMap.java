@@ -3,6 +3,7 @@ package com.zipcodewilmington.streams;
 import com.zipcodewilmington.streams.anthropoid.Person;
 import com.zipcodewilmington.streams.conversions.StreamConverter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +19,8 @@ public class StreamMap {
      * @return - a Stream of single characters
      */ //TODO
     public static Stream<String> letters(String someWord) {
-        return null;
+        List<String> list = Arrays.asList(someWord.split(""));
+        return list.stream();
     }
 
     /**
