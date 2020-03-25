@@ -48,9 +48,7 @@ public final class PersonFactory {
      * @return - Array of Person objects
      */ // TODO
     public Person[] createPersonArray(int arrayLength) {
-        List<Person> listOfRandomPeople = Collections.nCopies(arrayLength, createRandomPerson());
-        Person[] array = listOfRandomPeople.toArray(new Person[listOfRandomPeople.size()]);
-        return array;
+        return createPersonList(arrayLength).toArray(new Person[arrayLength]);
     }
 
 
@@ -61,8 +59,6 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public Stream<Person> createPersonStream(int streamCount) {
-        List<Person> listOfRandomPeople = Collections.nCopies(streamCount, createRandomPerson());
-        Stream<Person> streamOfPeople = listOfRandomPeople.stream();
-        return streamOfPeople;
+        return createPersonList(streamCount).stream();
     }
 }

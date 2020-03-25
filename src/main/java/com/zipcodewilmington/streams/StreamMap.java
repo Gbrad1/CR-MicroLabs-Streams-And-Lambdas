@@ -1,5 +1,6 @@
 package com.zipcodewilmington.streams;
 
+import com.fasterxml.jackson.annotation.JsonMerge;
 import com.zipcodewilmington.streams.anthropoid.Person;
 import com.zipcodewilmington.streams.conversions.StreamConverter;
 
@@ -19,8 +20,7 @@ public class StreamMap {
      * @return - a Stream of single characters
      */ //TODO
     public static Stream<String> letters(String someWord) {
-        List<String> list = Arrays.asList(someWord.split(""));
-        return list.stream();
+        return Arrays.stream(someWord.split(""));
     }
 
     /**
@@ -28,7 +28,7 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<Stream<String>> wordsMap(String... someWords) {
-        return null;
+        return Arrays.stream(someWords).map(StreamMap::letters);
     }
 
     /**
@@ -36,6 +36,6 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<String> wordsFlatMap(String... stringArray) {
-        return null;
+        return Arrays.stream(stringArray).flatMap(StreamMap::letters);
     }
 }
