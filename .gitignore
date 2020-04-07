@@ -5,3 +5,5 @@ target/*
 #.project
 .settings
 .idea/
+streamdemo.iml
+looptest.iml
